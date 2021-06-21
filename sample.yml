@@ -1,0 +1,9 @@
+apiVersion: v1 #api version
+kind: Pod     #its is like pod or services or replicaset or deployment
+metadata:     #details about container or object or pods
+    name: myapp-pod #pod name
+    labeles: 
+        app : myapp #(which application it is) any name
+        type : front-end #(its mena frontned or backend)any name..specifiing the pod is related to which purpose
+spec: 
+  container: #information regarding containers

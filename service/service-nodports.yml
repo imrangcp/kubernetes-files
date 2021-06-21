@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myservice
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80  #pod port
+      port : 80 # service port
+      nodePort: 30008  #node port
+  selector:
+    type: production 

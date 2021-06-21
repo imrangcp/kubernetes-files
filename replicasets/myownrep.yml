@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replica-name
+  labels:
+    type: production1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: production
+  template:
+    metadata:
+      name: imranpod
+      labels:
+       type: production
+    spec:
+      containers:
+       - name: imrancontainer
+         image: nginx:latest
+
+
+        
+  

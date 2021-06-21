@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: imran
+  name: imran
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imran
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: imran
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

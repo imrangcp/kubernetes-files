@@ -1,0 +1,64 @@
+kubectl get pod deployment-name1-57c6bdcc67-xfm6l -o yaml  (to get pod yaml file)
+
+service node port :-
+
+30000 to 32767 range service node port
+pods will run in deff ip adress within thd cluseter.
+every pod will have its own ip adress...pod is an process
+pods are wont have static ip...its dynamic ip..
+one pod to another pod communication will happen through services
+service nodeport will save node ips automatically through the labels
+services will have endpoint list
+in that all pods and ips will store
+service is virtual server inside the node..
+
+clusterip will provide node to node communication
+nodeport  will prodide to acces the appliction in outside
+loadbanacder will maintain the load balance
+
+
+
+
+nodes: physical or virtal
+        its a worker machine where the conatainers will b lanched
+        need to have more than one node
+cluster: will have multiple nodes
+master: in kubernetes there wil b a master which controll all the nodes
+
+when you intall kubernetes these components will install
+along with it.
+
+api server - its frentend to kubernetes user and command line management devices all will communicate to kubernetes cluster through api server
+etcd - its a key value store. it will store the kubernetes cluster data masters and nodes data in cluster.
+kubelet are responsible to run the container in the nodes as expected
+container runtime- is the underlying framework that is responsible for running application in containers like Docker?
+
+controller -will take of container like if node or contaiers will done...it will take care of that.
+scheduler -will distribute the work and container accross multiple nodes scheduler responsible for distributing work or containers across multiple nodes.  
+
+pods: pods are container in kubernets cluster - its an single instance in kubernets
+      The smallest unit you can create in Kubernetes object model is pods
+
+
+masternode:
+ETCD : it will store the kubernetes data in the form of keyvalues.
+kube-scheduler: it will decide which node is suiatable for this app or pod or container. according to the resources.
+
+controller:
+ node controller: its responsible is to controll the nodes on kubernetes.
+ replica-controller: it will take care of replication nodes...take care of 
+                    desired running replica contain
+kube-apiserver   - its responsible for all archistra of the cluster.
+
+ReplicaSet ensures that desired number of PODs always run
+
+deployment: in deployment upgrade the application and rollback the application to previos version 
+              this things will be ther in deployemtn 
+if pods are in pending state it mean there is no node specified.
+
+taints - tolaration
+taints  are 3
+noschedule - no pods will scheule
+prefernoschedule- try to avoid placing on the nodes that is not guarenteed
+no execution.- new pods will not b schedule and the existing pods if not tolerate they will be removed.
+

@@ -1,0 +1,1 @@
+find / -name (filename*) | grep '(filename.extention)'| xargs cp -t ./

@@ -1,0 +1,10 @@
+#-- node-bindng- assing node to pod 
+(pod details)
+apiVersion: v1
+kind: Binding
+metadata:
+  name: (pod name)
+target:
+  apiVersion: v1
+  kind: Node
+  name: (node name)

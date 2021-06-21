@@ -1,0 +1,33 @@
+kubectl replace -f filename.ymal (to do changes in pod)
+kubectl scale --replicas=6 -f filename.ymal
+kubectl scale --replicas=6 replicaset replicasetname
+
+
+kubectl scale deployment/imran --replicas=2
+
+kubectl create deployment --image=nginx imran --dry-run=client -o yaml
+kubectl run --image=nginx imran --namespace=dev --dry-run=client -o yaml
+
+namespcace
+set default ns  (namespace)
+kubectl -n(namespace) dev(namespace name) get pods
+kubectl config set-context $(kubectl config current-context) --namespace=default
+kubectl get pods --namespace=dev
+kubectl get pods --all-namespace all namespace pods
+to create service
+kubectl expose deployment imran --name=ngixna-service --port=80 --target-port=80 --type=ClusterIP --dry-run=client -o yaml
+kubectl run --image=redis redis --labels=tier=db --dry-run=client -o yaml
+kubectl run --image=redis redis --port=80 --expose (it will create service as well pod)
+kubectl run --image=redis redis --labels=app=myapp --port=80 --expose --dry-run=client -o yaml
+
+
+
+kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
+
+--w 
+
+kubectl get all (every object) --selector=env(this is a selectoru)=prod(pod) --no-headers |wc -l
+
+kubectl get po -l env=dev --no-headers | wc -l`
+
+get pod --show-labels 

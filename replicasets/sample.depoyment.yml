@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-name1
+  labels:
+    type: production1
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: production
+  template:
+    metadata:
+      name: imranpod
+      labels:
+       type: production
+    spec:
+      containers:
+       - name: imrancontainer
+         image: nginx:latest
