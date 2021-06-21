@@ -1,0 +1,30 @@
+controller brain behind the kubernetes
+replication will monitor like if one pod down..it will create same replica in cluster to avoid down time
+even if you have single pod replication will happen.
+replicas will do load balancing and scaling
+they are two
+replication controller
+replicaset
+
+apiVersion: app/v1
+kind: ReplicaSet  (object)
+metadata:  (replicaset information or details)
+  name: replicaset name..
+  labeles:        (object details like replica detail details)
+    type: frontned
+    app: plelicaset-lable-name
+
+spec:    (replica spcesification)
+  template:  (will provide pod details in templet)
+    metadata:
+      name: nginx-2
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: nginx-container-2
+          image: nginx:latest    
+  replicas: (replicas neumber need to mention)
+  selector: (it will help to replicaset to identify what are the pods under replicaset)
+    matchLabels:
+      app: myapp

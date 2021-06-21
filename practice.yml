@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nameofReplicaset
+  labels:
+    app: myapp
+    type: frontned
+spec:
+  template:
+    metadata:
+      name: podname
+      labels:
+        aap: myapp
+        type: frontned
+    spec:
+      containers:
+        - name: containername
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: frontned   

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: production
+  template:
+    metadata:
+      name: imranpod
+      labels:
+       type: production
+    spec:
+      containers:
+       - name: imrancontainer
+         image: httpd:2.4-alpine
